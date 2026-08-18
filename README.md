@@ -6,8 +6,6 @@ Data cleaning project using SQL Server
 SELECT * 
 FROM world_layoffs.layoffs;
 
-
-
 -- first thing we want to do is create a staging table. This is the one we will work in and clean the data. We want a table with the raw data in case something happens
 CREATE TABLE world_layoffs.layoffs_staging 
 LIKE world_layoffs.layoffs;
@@ -25,9 +23,6 @@ SELECT * FROM world_layoffs.layoffs;
 
 
 -- 1. Remove Duplicates
-
-# First let's check for duplicates
-
 
 
 SELECT *
@@ -160,11 +155,6 @@ SELECT `company`,
 
 DELETE FROM world_layoffs.layoffs_staging2
 WHERE row_num >= 2;
-
-
-
-
-
 
 
 -- 2. Standardize Data
